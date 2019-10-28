@@ -32,7 +32,7 @@ public class SecondStageTest {
 
     @Test
     public void allStagesTest() throws IOException {
-        String firstStgFilePath = String.join(File.separator, resourcePath, "shop_output.csv");
+        String firstStgFilePath = String.join(File.separator, resourcePath, "test_output1.csv");
 
         FirstStage.ActivityMapper mapper1st = new FirstStage.ActivityMapper();
         FirstStage.ActivityReducer reducer1st = new FirstStage.ActivityReducer();
@@ -53,7 +53,7 @@ public class SecondStageTest {
 
 
 //-----------------------------------------------
-        String secondStgFilePath = String.join(File.separator, resourcePath, "shop_output2.csv");
+        String secondStgFilePath = String.join(File.separator, resourcePath, "test_output2.csv");
 
         SecondStage.NameMapper mapper1 = new SecondStage.NameMapper();
         SecondStage.SubscriberMapper mapper2 = new SecondStage.SubscriberMapper();
@@ -68,7 +68,7 @@ public class SecondStageTest {
 
         ioHelper.write(secondStgFilePath, result);
 //------------------------------------------------
-        String joinedOutputFilePath = String.join(File.separator, resourcePath, "shop_output3.csv");
+        String joinedOutputFilePath = String.join(File.separator, resourcePath, "test_output3.csv");
 
         ThirdStage.FirstStageMapper joinMapper1 = new ThirdStage.FirstStageMapper();
         ThirdStage.SecondStageMapper joinMapper2 = new ThirdStage.SecondStageMapper();
