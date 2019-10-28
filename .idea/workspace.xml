@@ -3,11 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="9ed13609-7476-41df-ac0c-80ece928bdcb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/TestMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/TestReducer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/TestMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/TestMr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/TestMr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/shop_output.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/shop_output2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/shop_output3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/TestMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/TestReducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/TestMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/SecondStageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/SecondStageTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/TestMr.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/TestMr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/shop_output.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/shop_output2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/shop_output3.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestMr.testMr">
+  <component name="RunManager" selected="JUnit.SecondStageTest">
     <configuration name="SecondStageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testMavenMapReduce" />
       <extension name="coverage">
@@ -63,6 +70,22 @@
       <option name="PACKAGE_NAME" value="ru.digitalleague.test_mr" />
       <option name="MAIN_CLASS_NAME" value="ru.digitalleague.test_mr.SecondStageTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondStageTest.testMr" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testMavenMapReduce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.digitalleague.test_mr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.digitalleague.test_mr" />
+      <option name="MAIN_CLASS_NAME" value="ru.digitalleague.test_mr.SecondStageTest" />
+      <option name="METHOD_NAME" value="testMr" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,8 +123,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestMr.testMr" />
         <item itemvalue="JUnit.SecondStageTest" />
+        <item itemvalue="JUnit.SecondStageTest.testMr" />
+        <item itemvalue="JUnit.TestMr.testMr" />
         <item itemvalue="JUnit.TestMr" />
       </list>
     </recent_temporary>
