@@ -34,7 +34,7 @@ public class IOHelper {
             BufferedWriter br = new BufferedWriter(new FileWriter(fileName));
             String line ="";
             for (Pair pair : output) {
-                line += pair.getSecond().toString() + "\n";
+                line += pair.getFirst().toString() + ";" + pair.getSecond().toString() + "\n";//pair.getSecond().toString() + "\n";
             }
             br.write(line);
             br.close();

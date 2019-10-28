@@ -31,14 +31,14 @@ public class TestReducer extends Reducer<Text, Text, Text, Text> {
             }
         }
 
+        String[] splittedKey = key.toString().split(";");
 
         VALUE.set(new Text(
-                String.join(OUTPUT_DELIMITER, key.toString(), Arrays.toString(array)
+                String.join(OUTPUT_DELIMITER, splittedKey[1], Arrays.toString(array)
                         .replaceAll("\\s+", "")
                         .replaceAll("\\[", "")
                         .replaceAll("\\]","")
                         .replaceAll(",", ";"))));
-        String[] splittedKey = key.toString().split(";");
         KEY.set(splittedKey[0]);
         context.write(KEY, VALUE);
     }

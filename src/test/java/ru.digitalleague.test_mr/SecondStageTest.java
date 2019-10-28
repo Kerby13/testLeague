@@ -9,7 +9,7 @@ import org.apache.hadoop.mrunit.types.Pair;
 import org.junit.Test;
 import ru.digitalleague.test_mr.staging.SecondStage;
 import ru.digitalleague.test_mr.staging.ThirdStage;
-import ru.digitalleague.test_mr.staging.tools.IOHelper2;
+import ru.digitalleague.test_mr.staging.tools.IOHelper;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class SecondStageTest {
     private MultipleInputsMapReduceDriver<Text, Text, Text, Text> mrd;
     private MultipleInputsMapReduceDriver<Text, Text, Text, Text> mrdStageJoin;
 
-    private IOHelper2 ioHelper = new IOHelper2();
+    private IOHelper ioHelper = new IOHelper();
     private String resourcePath = String.join(File.separator, "src", "test", "resources");
     private String inputFilePath1 = String.join(File.separator, resourcePath, "DIM_BAN.csv");
     private String inputFilePath2 = String.join(File.separator, resourcePath, "DIM_SUBSCRIBER.csv");
