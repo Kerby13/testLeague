@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ed13609-7476-41df-ac0c-80ece928bdcb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/TestReducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/TestReducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/tools/IOHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/tools/IOHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/tools/IOHelper2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/TestMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/TestReducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/TestMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/TestMr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/TestMr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/SecondStageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/SecondStageTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SecondStageTest">
+  <component name="RunManager" selected="JUnit.TestMr.testMr">
     <configuration name="SecondStageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testMavenMapReduce" />
       <extension name="coverage">
@@ -100,9 +100,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestMr.testMr" />
         <item itemvalue="JUnit.SecondStageTest" />
         <item itemvalue="JUnit.TestMr" />
-        <item itemvalue="JUnit.TestMr.testMr" />
       </list>
     </recent_temporary>
   </component>

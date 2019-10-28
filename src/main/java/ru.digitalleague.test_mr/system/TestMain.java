@@ -14,8 +14,6 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
-import ru.digitalleague.test_mr.staging.TestMapper;
-import ru.digitalleague.test_mr.staging.TestReducer;
 
 public class TestMain extends Configured implements Tool {
 
@@ -38,11 +36,11 @@ public class TestMain extends Configured implements Tool {
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
 
-        job.setMapperClass(TestMapper.class);
+        //job.setMapperClass(TestMapper.class);
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(DoubleWritable.class);
 
-        job.setReducerClass(TestReducer.class);
+        //job.setReducerClass(TestReducer.class);
         job.setOutputKeyClass(NullWritable.class);
         job.setOutputValueClass(Text.class);
 

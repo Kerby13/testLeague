@@ -1,14 +1,11 @@
 package ru.digitalleague.test_mr;
 
-import org.apache.hadoop.io.DoubleWritable;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mrunit.mapreduce.MapReduceDriver;
 import org.apache.hadoop.mrunit.types.Pair;
 import org.junit.Test;
-import ru.digitalleague.test_mr.staging.TestMapper;
-import ru.digitalleague.test_mr.staging.TestReducer;
+import ru.digitalleague.test_mr.staging.FirstStage;
 import ru.digitalleague.test_mr.staging.tools.IOHelper;
 
 import java.io.File;
@@ -24,8 +21,8 @@ public class TestMr {
 
     @Test
     public void testMr() throws IOException {
-        TestMapper mapper = new TestMapper();
-        TestReducer reducer = new TestReducer();
+        FirstStage.ActivityMapper mapper = new FirstStage.ActivityMapper();
+        FirstStage.ActivityReducer reducer = new FirstStage.ActivityReducer();
 
         mapReduceDriver = new MapReduceDriver<>();
 
