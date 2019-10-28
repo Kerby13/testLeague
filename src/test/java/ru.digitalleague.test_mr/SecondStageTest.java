@@ -17,22 +17,18 @@ import java.io.IOException;
 import java.util.List;
 
 public class SecondStageTest {
-    private MapReduceDriver<LongWritable, Text, Text, Text, Text, Text> mapReduceDriver;
+    private MapReduceDriver<LongWritable, Text, Text, Text, Text, Text> mrd1st;
 
-    private MultipleInputsMapReduceDriver<Text, Text, Text, Text> mrd;
+    //private MultipleInputsMapReduceDriver<Text, Text, Text, Text> mrd1st;
+    private MultipleInputsMapReduceDriver<Text, Text, Text, Text> mrd2nd;
     private MultipleInputsMapReduceDriver<Text, Text, Text, Text> mrdStageJoin;
 
     private IOHelper ioHelper = new IOHelper();
     private String resourcePath = String.join(File.separator, "src", "test", "resources");
+    private String inputFilePath = String.join(File.separator, resourcePath, "cdr.csv");
     private String inputFilePath1 = String.join(File.separator, resourcePath, "DIM_BAN.csv");
     private String inputFilePath2 = String.join(File.separator, resourcePath, "DIM_SUBSCRIBER.csv");
-    //private String firstStgFilePath = String.join(File.separator, resourcePath, "shop_output.csv");
-    //private String secondStgFilePath = String.join(File.separator, resourcePath, "shop_output2.csv");
-    //private String outputFilePath = String.join(File.separator, resourcePath, "shop_output2.csv");
-    //private String joinedOutputFilePath = String.join(File.separator, resourcePath, "shop_output3.csv");
 
-
-    private String inputFilePath = String.join(File.separator, resourcePath, "cdr.csv");
 
     @Test
     public void allStagesTest() throws IOException {
@@ -41,16 +37,19 @@ public class SecondStageTest {
         FirstStage.ActivityMapper mapper1st = new FirstStage.ActivityMapper();
         FirstStage.ActivityReducer reducer1st = new FirstStage.ActivityReducer();
 
-        mapReduceDriver = new MapReduceDriver<>();
+        /*mrd1st = MultipleInputsMapReduceDriver.newMultipleInputMapReduceDriver(reducer1st).withMapper(mapper1st);
 
-        mapReduceDriver.setMapper(mapper1st);
-        mapReduceDriver.setReducer(reducer1st);
+        mrd1st.addAll(mapper1st, ioHelper.read(inputFilePath));*/
 
-        mapReduceDriver.addAll(ioHelper.read(inputFilePath));
-        List<Pair<Text, Text>> result1st = mapReduceDriver.run();
+        mrd1st = new MapReduceDriver<>();
+
+        mrd1st.setMapper(mapper1st);
+        mrd1st.setReducer(reducer1st);
+
+        mrd1st.addAll(ioHelper.read(inputFilePath));
+        List<Pair<Text, Text>> result1st = mrd1st.run();
 
         ioHelper.write(firstStgFilePath, result1st);
-        //++++
 
 
 //-----------------------------------------------
@@ -60,14 +59,12 @@ public class SecondStageTest {
         SecondStage.SubscriberMapper mapper2 = new SecondStage.SubscriberMapper();
         SecondStage.JoinReducer reducer = new SecondStage.JoinReducer();
 
-        /*mrd = new MultipleInputsMapReduceDriver<>();
-        mrd.addMapper(mapper1);
-        mrd.addMapper(mapper2);*/
-        mrd = MultipleInputsMapReduceDriver.newMultipleInputMapReduceDriver(reducer).withMapper(mapper1).withMapper(mapper2);
 
-        mrd.addAll(mapper1, ioHelper.read(inputFilePath1));
-        mrd.addAll(mapper2, ioHelper.read(inputFilePath2));
-        List<Pair<Text, Text>> result = mrd.run();
+        mrd2nd = MultipleInputsMapReduceDriver.newMultipleInputMapReduceDriver(reducer).withMapper(mapper1).withMapper(mapper2);
+
+        mrd2nd.addAll(mapper1, ioHelper.read(inputFilePath1));
+        mrd2nd.addAll(mapper2, ioHelper.read(inputFilePath2));
+        List<Pair<Text, Text>> result = mrd2nd.run();
 
         ioHelper.write(secondStgFilePath, result);
 //------------------------------------------------
@@ -87,3 +84,8 @@ public class SecondStageTest {
 
     }
 }
+
+
+/*mrd = new MultipleInputsMapReduceDriver<>();
+        mrd.addMapper(mapper1);
+        mrd.addMapper(mapper2);*/

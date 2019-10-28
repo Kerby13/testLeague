@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ed13609-7476-41df-ac0c-80ece928bdcb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/shop_output.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/shop_output2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/shop_output3.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/shop_output.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/shop_output2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/shop_output3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/TestMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/TestReducer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/TestMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/SecondStageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/SecondStageTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/TestMr.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/TestMr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/shop_output.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/shop_output2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/shop_output3.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +32,11 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1SbbNaZT1s8jMUbaS0IE0TMdRfk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -153,6 +149,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
