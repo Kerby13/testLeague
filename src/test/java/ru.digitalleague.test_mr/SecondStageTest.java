@@ -7,9 +7,14 @@ import org.apache.hadoop.mrunit.mapreduce.MapReduceDriver;
 import org.apache.hadoop.mrunit.mapreduce.MultipleInputsMapReduceDriver;
 import org.apache.hadoop.mrunit.types.Pair;
 import org.junit.Test;
-import ru.digitalleague.test_mr.staging.FirstStage;
-import ru.digitalleague.test_mr.staging.SecondStage;
-import ru.digitalleague.test_mr.staging.ThirdStage;
+import ru.digitalleague.test_mr.staging.Stage1.ActivityMapper;
+import ru.digitalleague.test_mr.staging.Stage1.FirstStageReducer;
+import ru.digitalleague.test_mr.staging.Stage2.NameMapper;
+import ru.digitalleague.test_mr.staging.Stage2.PhoneMapper;
+import ru.digitalleague.test_mr.staging.Stage2.SecondStageReducer;
+import ru.digitalleague.test_mr.staging.Stage3.FirstResultMapper;
+import ru.digitalleague.test_mr.staging.Stage3.SecondResultMapper;
+import ru.digitalleague.test_mr.staging.Stage3.ThirdStageReducer;
 import ru.digitalleague.test_mr.staging.tools.IOHelper;
 
 import java.io.File;
@@ -34,8 +39,8 @@ public class SecondStageTest {
     public void allStagesTest() throws IOException {
         String firstStgFilePath = String.join(File.separator, resourcePath, "test_output1.csv");
 
-        FirstStage.ActivityMapper mapper1st = new FirstStage.ActivityMapper();
-        FirstStage.ActivityReducer reducer1st = new FirstStage.ActivityReducer();
+        ActivityMapper mapper1st = new ActivityMapper();
+        FirstStageReducer reducer1st = new FirstStageReducer();
 
         /*mrd1st = MultipleInputsMapReduceDriver.newMultipleInputMapReduceDriver(reducer1st).withMapper(mapper1st);
 
@@ -55,9 +60,9 @@ public class SecondStageTest {
 //-----------------------------------------------
         String secondStgFilePath = String.join(File.separator, resourcePath, "test_output2.csv");
 
-        SecondStage.NameMapper mapper1 = new SecondStage.NameMapper();
-        SecondStage.SubscriberMapper mapper2 = new SecondStage.SubscriberMapper();
-        SecondStage.JoinReducer reducer = new SecondStage.JoinReducer();
+        NameMapper mapper1 = new NameMapper();
+        PhoneMapper mapper2 = new PhoneMapper();
+        SecondStageReducer reducer = new SecondStageReducer();
 
 
         mrd2nd = MultipleInputsMapReduceDriver.newMultipleInputMapReduceDriver(reducer).withMapper(mapper1).withMapper(mapper2);
@@ -70,9 +75,9 @@ public class SecondStageTest {
 //------------------------------------------------
         String joinedOutputFilePath = String.join(File.separator, resourcePath, "test_output3.csv");
 
-        ThirdStage.FirstStageMapper joinMapper1 = new ThirdStage.FirstStageMapper();
-        ThirdStage.SecondStageMapper joinMapper2 = new ThirdStage.SecondStageMapper();
-        ThirdStage.StageJoinReducer joinReducer = new ThirdStage.StageJoinReducer();
+        FirstResultMapper joinMapper1 = new FirstResultMapper();
+        SecondResultMapper joinMapper2 = new SecondResultMapper();
+        ThirdStageReducer joinReducer = new ThirdStageReducer();
 
         mrdStageJoin = MultipleInputsMapReduceDriver.newMultipleInputMapReduceDriver(joinReducer).withMapper(joinMapper1).withMapper(joinMapper2);
 

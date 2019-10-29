@@ -5,7 +5,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mrunit.mapreduce.MapReduceDriver;
 import org.apache.hadoop.mrunit.types.Pair;
 import org.junit.Test;
-import ru.digitalleague.test_mr.staging.FirstStage;
+import ru.digitalleague.test_mr.staging.Stage1.ActivityMapper;
+import ru.digitalleague.test_mr.staging.Stage1.FirstStageReducer;
 import ru.digitalleague.test_mr.staging.tools.IOHelper;
 
 import java.io.File;
@@ -21,8 +22,8 @@ public class TestMr {
 
     @Test
     public void testMr() throws IOException {
-        FirstStage.ActivityMapper mapper = new FirstStage.ActivityMapper();
-        FirstStage.ActivityReducer reducer = new FirstStage.ActivityReducer();
+        ActivityMapper mapper = new ActivityMapper();
+        FirstStageReducer reducer = new FirstStageReducer();
 
         mapReduceDriver = new MapReduceDriver<>();
 

@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="testMavenMapReduce:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ed13609-7476-41df-ac0c-80ece928bdcb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/testMavenMapReduce_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cluster_launch.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="9ed13609-7476-41df-ac0c-80ece928bdcb" name="Default Changelist" comment="Added First Stage Class &amp;&amp; changed project structure">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage1/ActivityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage1/FirstStageReducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage2/NameMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage2/PhoneMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage2/SecondStageReducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage3/FirstResultMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage3/SecondResultMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage3/ThirdStageReducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/ProjectParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/ProjectParams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/SecondStage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/ThirdStage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/TestMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/shop_output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_output1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/shop_output2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_output2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/shop_output3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_output3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams$cmdParse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams$cmdParse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/TestMr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/TestMr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_output1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_output1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_output2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_output2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_output3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_output3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/SecondStage$JoinReducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/SecondStage$NameMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/SecondStage$SubscriberMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/SecondStage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/ThirdStage$FirstStageMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/ThirdStage$SecondStageMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/ThirdStage$StageJoinReducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/ThirdStage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/TestMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/SecondStageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/SecondStageTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/TestMr.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/TestMr.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +65,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -152,7 +171,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -160,6 +181,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added First Stage Class &amp;&amp; changed project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added First Stage Class &amp;&amp; changed project structure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
