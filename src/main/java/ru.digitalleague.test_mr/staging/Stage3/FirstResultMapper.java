@@ -1,5 +1,6 @@
 package ru.digitalleague.test_mr.staging.Stage3;
 
+import org.apache.commons.math3.analysis.function.Min;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -12,6 +13,8 @@ public class FirstResultMapper extends Mapper<LongWritable, Text, Text, Text> {
     private int PHONE = 0;
     private static String FILE_TAG = "1st";
 
+    int MIN_LENGTH = 2;
+
     Text KEY = new Text();
     Text VALUE = new Text();
 
@@ -19,12 +22,14 @@ public class FirstResultMapper extends Mapper<LongWritable, Text, Text, Text> {
     protected void map(LongWritable key, Text value, Mapper.Context context)
             throws IOException, InterruptedException {
         String[] splittedValue = value.toString().split(INPUT_DELIMITER);
-        String phone = splittedValue[PHONE];
-        String other = value.toString();//.replace(value.toString().substring(0, 11), "");
+        if (splittedValue.length >= MIN_LENGTH) {
+            String phone = splittedValue[PHONE];
+            String other = value.toString();//.replace(value.toString().substring(0, 11), "");
 
-        KEY.set(phone);
-        VALUE.set(String.join(STRING_DELIMITER, FILE_TAG, other));
+            KEY.set(phone);
+            VALUE.set(String.join(STRING_DELIMITER, FILE_TAG, other));
 
-        context.write(KEY, VALUE);
+            context.write(KEY, VALUE);
+        }
     }
 }

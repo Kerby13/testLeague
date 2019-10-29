@@ -13,6 +13,8 @@ public class SecondResultMapper extends Mapper<LongWritable, Text, Text, Text> {
     private int NAME = 1;
     private static String FILE_TAG = "2nd";
 
+    int MIN_LENGTH = 2;
+
     Text KEY = new Text();
     Text VALUE = new Text();
 
@@ -20,12 +22,14 @@ public class SecondResultMapper extends Mapper<LongWritable, Text, Text, Text> {
     protected void map(LongWritable key, Text value, Mapper.Context context)
             throws IOException, InterruptedException {
         String[] splittedValue = value.toString().split(INPUT_DELIMITER);
-        String phone = splittedValue[PHONE];
-        String other = splittedValue[NAME];
+        if (splittedValue.length >= MIN_LENGTH) {
+            String phone = splittedValue[PHONE];
+            String other = splittedValue[NAME];
 
-        KEY.set(phone);
-        VALUE.set(String.join(STRING_DELIMITER, FILE_TAG, other));
+            KEY.set(phone);
+            VALUE.set(String.join(STRING_DELIMITER, FILE_TAG, other));
 
-        context.write(KEY, VALUE);
+            context.write(KEY, VALUE);
+        }
     }
 }

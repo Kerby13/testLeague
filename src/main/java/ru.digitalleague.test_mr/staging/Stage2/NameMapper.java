@@ -13,6 +13,8 @@ public class NameMapper extends Mapper<LongWritable, Text, Text, Text> {
     private int FULL_NAME = 14;
     private static String FILE_TAG = "name";
 
+    int MIN_LENGTH = 15;
+
     Text KEY = new Text();
     Text VALUE = new Text();
 
@@ -20,12 +22,14 @@ public class NameMapper extends Mapper<LongWritable, Text, Text, Text> {
     protected void map(LongWritable key, Text value, Mapper.Context context)
             throws IOException, InterruptedException {
         String[] splittedValue = value.toString().split(INPUT_DELIMITER);
-        String ban = splittedValue[BAN_KEY];
-        String name = splittedValue[FULL_NAME];
+        if (splittedValue.length >= MIN_LENGTH) {
+            String ban = splittedValue[BAN_KEY];
+            String name = splittedValue[FULL_NAME];
 
-        KEY.set(ban);
-        VALUE.set(String.join(STRING_DELIMITER, FILE_TAG, name));
+            KEY.set(ban);
+            VALUE.set(String.join(STRING_DELIMITER, FILE_TAG, name));
 
+        }
         context.write(KEY, VALUE);
     }
 }
