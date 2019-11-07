@@ -1,0 +1,13 @@
+ru\digitalleague\test_mr\staging\Stage3\SecondResultMapper.class
+ru\digitalleague\test_mr\system\TestMain.class
+ru\digitalleague\test_mr\staging\Stage1\ActivityMapper.class
+ru\digitalleague\test_mr\staging\Stage1\FirstStageReducer.class
+ru\digitalleague\test_mr\staging\Stage3\ThirdStageReducer.class
+ru\digitalleague\test_mr\system\ProjectParams.class
+ru\digitalleague\test_mr\staging\Stage2\SecondStageReducer.class
+ru\digitalleague\test_mr\staging\Stage3\FirstResultMapper.class
+ru\digitalleague\test_mr\system\ProjectParams$1.class
+ru\digitalleague\test_mr\staging\Stage2\NameMapper.class
+ru\digitalleague\test_mr\system\ProjectParams$cmdParse.class
+ru\digitalleague\test_mr\staging\Stage2\PhoneMapper.class
+ru\digitalleague\test_mr\staging\tools\IOHelper.class
