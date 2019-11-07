@@ -7,6 +7,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
+import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
@@ -32,15 +33,16 @@ public class TestMain extends Configured implements Tool {
     public int run(String[] args) throws Exception {
         ProjectParams params = new ProjectParams(args);
 
-
         Job job = Job.getInstance(params.config);
+
+        job.getConfiguration().set("mapreduce.job.queuename", params.queue_name);
 
         job.setJobName(params.projectName);
 
         job.setJarByClass(TestMain.class);
 
         job.setNumReduceTasks(params.reducesCnt);
-        job.setInputFormatClass(TextInputFormat.class);
+        job.setInputFormatClass(SequenceFileInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
 
         switch (params.stage_number) {
@@ -52,8 +54,8 @@ public class TestMain extends Configured implements Tool {
                 FileOutputFormat.setOutputPath(job, new Path(params.outputTestPath));
             }
             case 2: {
-                MultipleInputs.addInputPath(job, new Path(params.inputTestPath1), TextInputFormat.class, NameMapper.class);
-                MultipleInputs.addInputPath(job, new Path(params.inputTestPath2), TextInputFormat.class, PhoneMapper.class);
+                MultipleInputs.addInputPath(job, new Path(params.inputTestPath1), SequenceFileInputFormat.class, NameMapper.class);
+                MultipleInputs.addInputPath(job, new Path(params.inputTestPath2), SequenceFileInputFormat.class, PhoneMapper.class);
 
                 job.setReducerClass(SecondStageReducer.class);
                 FileOutputFormat.setOutputPath(job, new Path(params.outputTestPath));
@@ -67,26 +69,7 @@ public class TestMain extends Configured implements Tool {
             }
         }
 
-        /*job.setJobName(params.projectName);
-
-        job.setJarByClass(TestMain.class);
-
-        job.setNumReduceTasks(params.reducesCnt);
-        job.setInputFormatClass(TextInputFormat.class);
-        job.setOutputFormatClass(TextOutputFormat.class);*/
-
-//        job.setMapperClass(TestMapper.class);
-//        job.setMapOutputKeyClass(Text.class);
-//        job.setMapOutputValueClass(DoubleWritable.class);
-
-//        job.setReducerClass(TestReducer.class);
-//        job.setOutputKeyClass(NullWritable.class);
-//        job.setOutputValueClass(Text.class);
-
         FileSystem hdfs = FileSystem.get(job.getConfiguration());
-
-        /*FileInputFormat.addInputPath(job, new Path(params.inputTestPath));
-        FileOutputFormat.setOutputPath(job, new Path(params.outputTestPath));*/
 
         if (hdfs.exists(new Path(params.outputTestPath))) {
             hdfs.delete(new Path(params.outputTestPath), true);

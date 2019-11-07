@@ -10,6 +10,7 @@ public class ProjectParams {
     public String outputTestPath = "";
     public Configuration config = new Configuration();
     public int stage_number = 1;
+    public String queue_name = "";
 
     public enum cmdParse {
         PROJECT_NAME,
@@ -17,7 +18,8 @@ public class ProjectParams {
         INPUT_TEST_PATH2,
         REDUCES_CNT,
         OUTPUT_TEST_PATH,
-        STAGE_NUMBER
+        STAGE_NUMBER,
+        QUEUE_NAME
     }
 
     public ProjectParams(String[] args) {
@@ -45,6 +47,9 @@ public class ProjectParams {
                         break;
                     case STAGE_NUMBER:
                         stage_number = Integer.parseInt(argSplit[1]);
+                        break;
+                        case QUEUE_NAME:
+                        queue_name = argSplit[1];
                         break;
                     default:
                         break;
