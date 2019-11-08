@@ -4,46 +4,46 @@ mainClass="ru.digitalleague.test_mr.system.TestMain"
 
 reducers=1 
 
-firstInputPath="/user/cmd/storage/MAF5/20171007/*" 
+stage1InputPath="/user/cmd/storage/MAF5/20171007/*" 
 
-second1InputPath="/apps/hive/warehouse/biis.db/dim_ban/market_key=PBUR" 
+stage2InputPath1="/apps/hive/warehouse/biis.db/dim_ban/market_key=PBUR" 
 
-second2InputPath="/apps/hive/warehouse/biis.db/dim_subscriber/market_key=PBUR" 
+stage2InputPath2="/apps/hive/warehouse/biis.db/dim_subscriber/market_key=PBUR" 
 
-third1InputPath="/user/pshevlyakova/nalukin/output" 
+stage3InputPath1="/user/pshevlyakova/nalukin/output/stage1" 
 
-third2InputPath="/user/pshevlyakova/nalukin/output" 
+stage3InputPath2="/user/pshevlyakova/nalukin/output/stage2" 
 
-testOutputPath="/user/pshevlyakova/nalukin/output"
+outputPath="/user/pshevlyakova/nalukin/output"
 
 
-hadoop fs -rm -R ${testOutputPath} 
-
-hadoop jar ${jarName} ${mainClass} \
-PROJECT_NAME=${projectName} \
-INPUT_TEST_PATH1=${firstInputPath} \
-INPUT_TEST_PATH2=${firstInputPath} \
-OUTPUT_TEST_PATH=${testOutputPath} \
-REDUCES_CNT=${reducers} \
-STAGE_NUMBER=${1} \
-QUEUE_NAME=adhoc
+hadoop fs -rm -R ${outputPath} 
 
 hadoop jar ${jarName} ${mainClass} \
 PROJECT_NAME=${projectName} \
-INPUT_TEST_PATH1=${second1InputPath} \
-INPUT_TEST_PATH2=${second2InputPath} \
-OUTPUT_TEST_PATH=${testOutputPath} \
+STAGE1_INPUT_PATH=${stage1InputPath} \
+STAGE2_INPUT_PATH=${stage1InputPath} \
+OUTPUT_PATH=${stage3InputPath1} \
 REDUCES_CNT=${reducers} \
-STAGE_NUMBER=${2} \
+STAGE_NUMBER=1 \
 QUEUE_NAME=adhoc
 
+#hadoop jar ${jarName} ${mainClass} \
+#PROJECT_NAME=${projectName} \
+#STAGE1_INPUT_PATH=${stage2InputPath1} \
+#STAGE2_INPUT_PATH=${stage2InputPath2} \
+#OUTPUT_PATH=${stage3InputPath2} \
+#REDUCES_CNT=${reducers} \
+#STAGE_NUMBER=2 \
+#QUEUE_NAME=adhoc
 
-hadoop jar ${jarName} ${mainClass} \
-PROJECT_NAME=${projectName} \
-INPUT_TEST_PATH1=${third1InputPath} \
-INPUT_TEST_PATH2=${third2InputPath} \
-OUTPUT_TEST_PATH=${testOutputPath} \
-REDUCES_CNT=${reducers} \
-STAGE_NUMBER=${3} \
-QUEUE_NAME=adhoc
+
+#hadoop jar ${jarName} ${mainClass} \
+#PROJECT_NAME=${projectName} \
+#STAGE1_INPUT_PATH=${stage3InputPath1} \
+#STAGE2_INPUT_PATH=${stage3InputPath2} \
+#OUTPUT_PATH=${outputPath} \
+#REDUCES_CNT=${reducers} \
+#STAGE_NUMBER=3 \
+#QUEUE_NAME=adhoc
 

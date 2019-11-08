@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class ActivityMapper extends Mapper<LongWritable, Text, Text, Text> {
+public class ActivityMapper extends Mapper<Text, Text, Text, Text> {
     private String INPUT_DELIMITER = "\\|";
     private String STRING_DELIMITER = ";";
     private int PHONE_NUMBER = 1;
@@ -21,7 +21,7 @@ public class ActivityMapper extends Mapper<LongWritable, Text, Text, Text> {
 
 
     @Override
-    protected void map(LongWritable key, Text value, Context context)
+    protected void map(Text key, Text value, Context context)
             throws IOException, InterruptedException {
         String[] splittedValue = value.toString().split(INPUT_DELIMITER);
 

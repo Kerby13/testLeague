@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class PhoneMapper extends Mapper<LongWritable, Text, Text, Text> {
+public class PhoneMapper extends Mapper<Text, Text, Text, Text> {
     private String INPUT_DELIMITER = "\u0001";
     private String STRING_DELIMITER = "    ";
     private int BAN_KEY = 0;
@@ -19,7 +19,7 @@ public class PhoneMapper extends Mapper<LongWritable, Text, Text, Text> {
     Text VALUE = new Text();
 
     @Override
-    protected void map(LongWritable key, Text value, Mapper.Context context)
+    protected void map(Text key, Text value, Mapper.Context context)
             throws IOException, InterruptedException {
         String[] splittedValue = value.toString().split(INPUT_DELIMITER);
         if (splittedValue.length >= MIN_LENGTH) {

@@ -1,3 +1,4 @@
+/*
 package ru.digitalleague.test_mr;
 
 import org.apache.hadoop.io.LongWritable;
@@ -36,3 +37,4 @@ public class TestMr {
         ioHelper.write(outputFilePath, result);
     }
 }
+*/

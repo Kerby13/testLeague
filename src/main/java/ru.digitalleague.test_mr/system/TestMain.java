@@ -21,6 +21,7 @@ import ru.digitalleague.test_mr.staging.Stage2.SecondStageReducer;
 import ru.digitalleague.test_mr.staging.Stage3.FirstResultMapper;
 import ru.digitalleague.test_mr.staging.Stage3.SecondResultMapper;
 import ru.digitalleague.test_mr.staging.Stage3.ThirdStageReducer;
+import ru.digitalleague.test_mr.staging.tools.IOHelper;
 
 public class TestMain extends Configured implements Tool {
 
@@ -31,6 +32,8 @@ public class TestMain extends Configured implements Tool {
 
     @Override
     public int run(String[] args) throws Exception {
+        IOHelper ioHelper = new IOHelper();
+
         ProjectParams params = new ProjectParams(args);
 
         Job job = Job.getInstance(params.config);
@@ -47,33 +50,43 @@ public class TestMain extends Configured implements Tool {
 
         switch (params.stage_number) {
             case 1: {
+                ioHelper.read(params.cmdInputPath);
                 job.setMapperClass(ActivityMapper.class);
                 job.setReducerClass(FirstStageReducer.class);
 
-                FileInputFormat.addInputPath(job, new Path(params.inputTestPath1));
-                FileOutputFormat.setOutputPath(job, new Path(params.outputTestPath));
+                FileInputFormat.addInputPath(job, new Path(params.cmdInputPath));
+                FileOutputFormat.setOutputPath(job, new Path(params.stage1_outputPath));
+                break;
             }
             case 2: {
-                MultipleInputs.addInputPath(job, new Path(params.inputTestPath1), SequenceFileInputFormat.class, NameMapper.class);
-                MultipleInputs.addInputPath(job, new Path(params.inputTestPath2), SequenceFileInputFormat.class, PhoneMapper.class);
+                MultipleInputs.addInputPath(job, new Path(params.dimBanInputPath), SequenceFileInputFormat.class, NameMapper.class);
+                MultipleInputs.addInputPath(job, new Path(params.subscriberInputPath), SequenceFileInputFormat.class, PhoneMapper.class);
 
                 job.setReducerClass(SecondStageReducer.class);
-                FileOutputFormat.setOutputPath(job, new Path(params.outputTestPath));
+                FileOutputFormat.setOutputPath(job, new Path(params.stage2_outputPath));
+                break;
             }
             case 3: {
-                MultipleInputs.addInputPath(job, new Path(params.inputTestPath1), TextInputFormat.class, FirstResultMapper.class);
-                MultipleInputs.addInputPath(job, new Path(params.inputTestPath2), TextInputFormat.class, SecondResultMapper.class);
+                MultipleInputs.addInputPath(job, new Path(params.stage1_outputPath), TextInputFormat.class, FirstResultMapper.class);
+                MultipleInputs.addInputPath(job, new Path(params.stage2_outputPath), TextInputFormat.class, SecondResultMapper.class);
 
                 job.setReducerClass(ThirdStageReducer.class);
-                FileOutputFormat.setOutputPath(job, new Path(params.outputTestPath));
+                FileOutputFormat.setOutputPath(job, new Path(params.stage3_outputPath));
+                break;
             }
         }
 
         FileSystem hdfs = FileSystem.get(job.getConfiguration());
 
-        if (hdfs.exists(new Path(params.outputTestPath))) {
-            hdfs.delete(new Path(params.outputTestPath), true);
+        if (hdfs.exists(new Path(params.stage1_outputPath))) {
+            hdfs.delete(new Path(params.stage1_outputPath), true);
         }
+        /*if (hdfs.exists(new Path(params.stage2_outputPath))) {
+            hdfs.delete(new Path(params.stage2_outputPath), true);
+        }
+        if (hdfs.exists(new Path(params.stage3_outputPath))) {
+            hdfs.delete(new Path(params.stage3_outputPath), true);
+        }*/
 
         return job.waitForCompletion(true) ? 0 : 1;
     }

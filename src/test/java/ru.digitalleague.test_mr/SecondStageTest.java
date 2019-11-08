@@ -1,3 +1,4 @@
+/*
 package ru.digitalleague.test_mr;
 
 import org.apache.hadoop.io.LongWritable;
@@ -42,9 +43,11 @@ public class SecondStageTest {
         ActivityMapper mapper1st = new ActivityMapper();
         FirstStageReducer reducer1st = new FirstStageReducer();
 
-        /*mrd1st = MultipleInputsMapReduceDriver.newMultipleInputMapReduceDriver(reducer1st).withMapper(mapper1st);
+        */
+/*mrd1st = MultipleInputsMapReduceDriver.newMultipleInputMapReduceDriver(reducer1st).withMapper(mapper1st);
 
-        mrd1st.addAll(mapper1st, ioHelper.read(inputFilePath));*/
+        mrd1st.addAll(mapper1st, ioHelper.read(inputFilePath));*//*
+
 
         mrd1st = new MapReduceDriver<>();
 
@@ -91,6 +94,7 @@ public class SecondStageTest {
 }
 
 
+*/
 /*mrd = new MultipleInputsMapReduceDriver<>();
         mrd.addMapper(mapper1);
         mrd.addMapper(mapper2);*/
