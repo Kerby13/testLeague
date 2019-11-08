@@ -8,35 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9ed13609-7476-41df-ac0c-80ece928bdcb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testMavenMapReduce_jar/testMavenMapReduce.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testMavenMapReduce_jar/testMavenMapReduce.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage1/ActivityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage1/ActivityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage2/NameMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage2/NameMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage2/PhoneMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage2/PhoneMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage3/FirstResultMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage3/FirstResultMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage3/SecondResultMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/staging/Stage3/SecondResultMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/ProjectParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/ProjectParams.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.digitalleague.test_mr/system/TestMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/SecondStageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/TestMr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.digitalleague.test_mr/TestMr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_task.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start_task.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage1/ActivityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage1/ActivityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage2/NameMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage2/NameMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage2/PhoneMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage2/PhoneMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage3/FirstResultMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage3/FirstResultMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage3/SecondResultMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/staging/Stage3/SecondResultMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams$cmdParse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams$cmdParse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/ProjectParams.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/digitalleague/test_mr/system/TestMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/mapReduce-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mapReduce-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.digitalleague.test_mr.SecondStageTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.digitalleague.test_mr.TestMr.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.digitalleague.test_mr.SecondStageTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.digitalleague.test_mr.TestMr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/SecondStageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/digitalleague/test_mr/TestMr.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -195,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573131710807</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="paths name fixes &amp;&amp; map types">
+      <created>1573199311193</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1573199311193</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +197,7 @@
     <MESSAGE value="Added First Stage Class &amp;&amp; changed project structure" />
     <MESSAGE value="Added properly length format check" />
     <MESSAGE value="prelaunch fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="prelaunch fixes" />
+    <MESSAGE value="paths name fixes &amp;&amp; map types" />
+    <option name="LAST_COMMIT_MESSAGE" value="paths name fixes &amp;&amp; map types" />
   </component>
 </project>

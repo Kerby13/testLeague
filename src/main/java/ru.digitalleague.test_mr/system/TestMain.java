@@ -21,7 +21,6 @@ import ru.digitalleague.test_mr.staging.Stage2.SecondStageReducer;
 import ru.digitalleague.test_mr.staging.Stage3.FirstResultMapper;
 import ru.digitalleague.test_mr.staging.Stage3.SecondResultMapper;
 import ru.digitalleague.test_mr.staging.Stage3.ThirdStageReducer;
-import ru.digitalleague.test_mr.staging.tools.IOHelper;
 
 public class TestMain extends Configured implements Tool {
 
@@ -32,7 +31,6 @@ public class TestMain extends Configured implements Tool {
 
     @Override
     public int run(String[] args) throws Exception {
-        IOHelper ioHelper = new IOHelper();
 
         ProjectParams params = new ProjectParams(args);
 
@@ -50,7 +48,6 @@ public class TestMain extends Configured implements Tool {
 
         switch (params.stage_number) {
             case 1: {
-                ioHelper.read(params.cmdInputPath);
                 job.setMapperClass(ActivityMapper.class);
                 job.setReducerClass(FirstStageReducer.class);
 
