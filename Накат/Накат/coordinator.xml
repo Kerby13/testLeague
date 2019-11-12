@@ -1,0 +1,27 @@
+<coordinator-app name="${PROJECT_NAME}" 
+                 frequency="${coord:days(1)}"
+                 start="${START_DATE}"
+                 end="${END_DATE}"
+                 timezone="Europe/Moscow"
+				 xmlns="uri:oozie:coordinator:0.4"
+                 xmlns:sla="uri:oozie:sla:0.2">	 	
+	<action>
+	    <workflow>
+		   <app-path>${WORKING_DIR}</app-path> <!-- -->
+		   <configuration>
+			<property>
+                   	 <name>DATE_1D</name>
+                    	 <value>${coord:formatTime(coord:dateOffset(coord:nominalTime(), -1, 'DAY'), 'yyyy-MM-dd')}</value>
+                 	</property>
+		   </configuration>
+            </workflow>
+        <sla:info>
+            <sla:nominal-time>${coord:nominalTime()}</sla:nominal-time>
+            <sla:should-start>${1 * DAYS}</sla:should-start>
+            <sla:should-end>${1 * DAYS}</sla:should-end>
+            <sla:max-duration>${1 * DAYS}</sla:max-duration>
+            <sla:alert-events>start_miss,end_miss,duration_miss</sla:alert-events>
+            <sla:alert-contact>${MAIL}</sla:alert-contact>
+        </sla:info>
+     </action>
+</coordinator-app>

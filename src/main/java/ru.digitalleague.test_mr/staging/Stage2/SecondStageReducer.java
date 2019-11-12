@@ -19,7 +19,7 @@ public class SecondStageReducer extends Reducer<Text, Text, Text, Text> {
                 name = parts[1];
             }
         }
-        if (!phone.equals(""))
+        if (!name.equals("") && !phone.equals(""))
             context.write(new Text(phone), new Text(name));
     }
 }

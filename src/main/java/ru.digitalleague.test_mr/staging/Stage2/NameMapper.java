@@ -1,12 +1,13 @@
 package ru.digitalleague.test_mr.staging.Stage2;
 
 import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class NameMapper extends Mapper<Text, Text, Text, Text> {
+public class NameMapper extends Mapper<NullWritable, Text, Text, Text> {
     private String INPUT_DELIMITER = "\u0001";
     private String STRING_DELIMITER = "    ";
     private int BAN_KEY = 0;
@@ -19,9 +20,10 @@ public class NameMapper extends Mapper<Text, Text, Text, Text> {
     Text VALUE = new Text();
 
     @Override
-    protected void map(Text key, Text value, Mapper.Context context)
+    protected void map(NullWritable key, Text value, Context context)
             throws IOException, InterruptedException {
         String[] splittedValue = value.toString().split(INPUT_DELIMITER);
+
         if (splittedValue.length >= MIN_LENGTH) {
             String ban = splittedValue[BAN_KEY];
             String name = splittedValue[FULL_NAME];

@@ -1,0 +1,51 @@
+<workflow-app name="${PROJECT_NAME}" xmlns="uri:oozie:workflow:0.4">
+ <global>
+   <job-tracker>${JOB_TRACKER}</job-tracker>
+   <name-node>${NAME_NODE}</name-node>
+    <configuration>
+		<property>
+		 <name>mapreduce.job.queuename</name>
+		 <value>${QUEUE_NAME}</value>
+		</property>
+		<property>
+                <name>mapreduce.job.reduces</name>
+                <value>${REDUCE_TASKS}</value>
+           	</property>
+		<property>
+                <name>hive.exec.reducers.max</name>
+                <value>${REDUCE_TASKS}</value>
+            	</property>
+		<property>
+		<name>oozie.launcher.yarn.resourcemanager.scheduler.monitor.enable</name>
+		<value>false</value>
+		</property>
+    </configuration>
+ </global>
+  <start to="days_cnt"/>
+	<action name = "stg_1">
+		<java>
+			<main-class>ru.digitalleague.test_mr.system.TestMain</main-class>
+			<arg>-Dmapred.job.queue.name=${QUEUE_NAME}</arg>
+			<arg>-Dmapred.reduce.tasks=10</arg>
+			<arg>COMVERSE_PATH=${COMVERSE_PATH}</arg>
+			<arg>WORKING_PATH=${HDFS_WORKING_PATH}</arg>
+			<arg>DWH_DIM_ACCOUNT_TYPE=${DWH_DIM_ACCOUNT_TYPE}</arg>
+			<arg>DWH_STG_REF_LOCATION_AREA=${DWH_STG_REF_LOCATION_AREA}</arg>
+			<arg>STG_AMD_REGION_CELL_ID=${STG_AMD_REGION_CELL_ID}</arg>
+			<arg>BILLING_AMDOCS=${BILLING_AMDOCS}</arg>
+			<arg>SUBSCRIBER_AMDOCS=${SUBSCRIBER_AMDOCS}</arg>
+			<arg>START_PERIOD=${CURRENT_DATE}</arg>
+			<arg>CDR_PATH=${CDR_PATH}</arg>
+			<arg>BIIS_STG_REF_PREPAID_ACTIVITY_TYPE=${BIIS_STG_REF_PREPAID_ACTIVITY_TYPE}</arg>
+			<arg>TACS_KEYS=${TACS_KEY}</arg>
+			<arg>STG_NUM=1</arg>
+		</java>
+		<ok to="stg_2"/>
+		<error to="kill"/>
+	</action>  
+  
+	<kill name="kill">
+	<message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+	</kill>
+	 <end name="end"/>
+</workflow-app>

@@ -16,9 +16,7 @@ public class ActivityMapper extends Mapper<Text, Text, Text, Text> {
     int MIN_LENGTH = 33;
 
     Text KEY = new Text();
-    //IntWritable VALUE = new IntWritable();
     Text VALUE = new Text();
-
 
     @Override
     protected void map(Text key, Text value, Context context)
@@ -26,7 +24,10 @@ public class ActivityMapper extends Mapper<Text, Text, Text, Text> {
         String[] splittedValue = value.toString().split(INPUT_DELIMITER);
 
         if (splittedValue.length >= MIN_LENGTH) {
-            String phone_number = splittedValue[PHONE_NUMBER];
+            String phone_number = "";
+            if (splittedValue[PHONE_NUMBER].startsWith("9")) {
+                phone_number = splittedValue[PHONE_NUMBER];
+            }
             String date = splittedValue[DATETIME].substring(0, 8);
             String activity_type = splittedValue[ACTIVITY_TYPE];
 
@@ -59,7 +60,9 @@ public class ActivityMapper extends Mapper<Text, Text, Text, Text> {
             }
             //VALUE.set(1);
 
-            context.write(KEY, VALUE);
+            if (activity_type.equals("V") || activity_type.equals("S")) {
+                context.write(KEY, VALUE);
+            }
         }
     }
 }
